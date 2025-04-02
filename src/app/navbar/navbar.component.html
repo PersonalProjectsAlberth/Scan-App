@@ -1,0 +1,37 @@
+<nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex-shrink-0">
+                <a href="#" class="text-white text-lg font-bold">MyApp</a>
+            </div>
+            <div class="hidden md:flex space-x-4">
+                <a href="#" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Andorid</a>
+                <a href="#" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Apple</a>
+            </div>
+            <div class="relative">
+                <button
+                    class="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                    id="user-menu-button" aria-expanded="false" aria-haspopup="true" (click)="toggleDropdown()">
+                    <img class="h-8 w-8 rounded-full" src="https://mdbootstrap.com/img/Photos/Avatars/img (31).webp"
+                        alt="Avatar" />
+                </button>
+                <div *ngIf="isDropdownOpen"
+                    class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                        (click)="closeDropdown()">GO PREMIUM</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                        (click)="closeDropdown()">Ajustes</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                        (click)="closeDropdown()">Estadisticas</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                        (click)="closeDropdown()">Como jugar</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                        (click)="closeDropdown()">Unirse</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                        (click)="closeDropdown()">Salir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
