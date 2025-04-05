@@ -2,19 +2,25 @@
     <h1>Shape ID: {{ shapeId }}</h1>
 </div>
 
-
 <div class="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden border-2 border-gray-300">
-    <!-- Imagen inicial -->
-    <img *ngIf="!isCameraActive" src="assets/shapesPuzzel-1/{{ shapeId }}.png" alt="Puzzle Image" class="w-full h-48 object-contain" />
-
-    <!-- Canvas para mostrar el video -->
-    <canvas *ngIf="isCameraActive" #canvasElement class="w-full h-48"></canvas>
+    <!-- Canvas para mostrar la imagen capturada -->
+    <canvas #canvasElement class="w-full h-48"></canvas>
 </div>
 
 <div class="text-center">
-    <button type="button"
-        class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-        (click)="startCamera()">
-        Escanear
-    </button>
+    <!-- Botón para tomar una foto -->
+    <input
+        id="takePictureInput"
+        type="file"
+        accept="image/*"
+        capture="environment"
+        class="hidden"
+        (change)="handlePhotoCapture($event)"
+    />
+    <label
+        for="takePictureInput"
+        class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 cursor-pointer"
+    >
+        Tomar Foto
+    </label>
 </div>
