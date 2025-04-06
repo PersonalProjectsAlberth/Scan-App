@@ -92,9 +92,9 @@ export class ScanShapeComponent implements OnInit {
 
             // console.log('Índice del valor máximo:', maxIndex+1);
             if (maxIndex + 1 === Number(this.shapeId)) {
-              this.predictionMessageG = 'La predicción es correcta ✅';
+              this.predictionMessageG = '✅ La predicción es correcta';
             } else {
-              this.predictionMessageB = 'La predicción es incorrecta ❌';
+              this.predictionMessageB = '❌ La predicción es incorrecta';
             }
             // console.log('Valor máximo:', maxValue);
           } catch (error) {
