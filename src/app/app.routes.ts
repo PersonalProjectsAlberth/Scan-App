@@ -5,8 +5,10 @@ import { ScanShapeComponent } from './scan-shape/scan-shape.component';
 
 export const routes: Routes = [
     {path: '', component: PuzzleCardComponent},
-    {path: 'shape', component: ShapeCardComponent},
-    {path: 'shape/:id', component: ScanShapeComponent},
+    {path: 'shape1', component: ShapeCardComponent},
+    {path: 'shape2', component: ShapeCardComponent},
+    {path: 'shape1/:id', component: ScanShapeComponent},
+    {path: 'shape2/:id', component: ScanShapeComponent},
 
     {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
