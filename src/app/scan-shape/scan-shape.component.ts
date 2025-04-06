@@ -11,6 +11,7 @@ import { TensorflowService } from '../services/tensorflow.service';
 })
 export class ScanShapeComponent implements OnInit {
   shapeId!: string; // Variable para almacenar el ID de la URL
+  modelId: string = '';
   isCameraActive: boolean = false;
   predictionMessageG: string = '';
   predictionMessageB: string = '';
@@ -28,8 +29,20 @@ export class ScanShapeComponent implements OnInit {
     this.shapeId = this.route.snapshot.paramMap.get('id') || '';
     console.log('Shape ID:', this.shapeId);
 
+    // Extraer el número después de "shape" para modelId
+
+    const url = this.route.snapshot.url.join('/');
+    const shapeMatch = url.match(/shape(\d+)/);
+    if (shapeMatch) {
+      this.modelId = shapeMatch[1]; // El último carácter de "shape2"
+      console.log('Model ID:', this.modelId);
+    } else {
+      console.error('No se pudo extraer el Model ID de la URL');
+    }
+
     // Cargar el modelo TensorFlow
-    await this.tfService.loadModel('assets/my_model/model.json'); // Ruta al modelo
+    // await this.tfService.loadModel('assets/my_model/model.json'); // Ruta al modelo
+    await this.tfService.loadModel(`assets/my_model${this.modelId}/model.json`); // Ruta al modelo
   }
 
   async handlePhotoCapture(event: Event): Promise<void> {
@@ -83,7 +96,7 @@ export class ScanShapeComponent implements OnInit {
             console.log('Predicción del modelo:', prediction);
 
             const predictionreuslt = Array.from(prediction) as number[];
-            
+
             // Obtener el valor máximo
             const maxValue = Math.max(...predictionreuslt);
 

@@ -5,7 +5,7 @@
 </div>
 
 <div class="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden border-2 border-gray-300 flex items-center justify-center">
-    <img *ngIf="!isCameraActive" src="assets/shapesPuzzel-1/{{ shapeId }}.png" alt="Puzzle Image" class="object-contain w-full h-auto" />
+    <img *ngIf="!isCameraActive" src="assets/shapesPuzzel-{{modelId}}/{{ shapeId }}.png" alt="Puzzle Image" class="object-contain w-full h-auto" />
     <!-- Canvas para mostrar la imagen capturada -->
     <canvas *ngIf="isCameraActive" #canvasElement class="block w-full h-auto"></canvas>
 </div>
