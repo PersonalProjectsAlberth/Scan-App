@@ -8,9 +8,11 @@ export const routes: Routes = [
     {path: 'shape1', component: ShapeCardComponent},
     {path: 'shape2', component: ShapeCardComponent},
     {path: 'shape3', component: ShapeCardComponent},
+    {path: 'shape4', component: ShapeCardComponent},
     {path: 'shape1/:id', component: ScanShapeComponent},
     {path: 'shape2/:id', component: ScanShapeComponent},
     {path: 'shape3/:id', component: ScanShapeComponent},
+    {path: 'shape4/:id', component: ScanShapeComponent},
 
     {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
